@@ -13,6 +13,16 @@ Basic working of the application:
 
 By leveraging this CLI tool, users can easily configure multiple online instances by simply providing the instance names as input, automating the compilation and installation of a C program on those instances using Ansible, and ensuring a smooth and consistent configuration process.
 
+To run the application,
+
+```bash
+python cliApp.py <instance names>
+
+or
+
+python3 cliApp.py <instance names>
+```
+
 We can also easily add testing for this tool,
 
 For example this is a python test written for this application that ensures that wrong instance names are handled well and also that the app run properly,
