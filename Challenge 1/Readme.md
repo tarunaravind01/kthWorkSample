@@ -14,6 +14,8 @@ Basic working of the application:
 By leveraging this CLI tool, users can easily configure multiple online instances by simply providing the instance names as input, automating the compilation and installation of a C program on those instances using Ansible, and ensuring a smooth and consistent configuration process.
 
 Refer https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html for ansible installation. 
+
+
 To run the application,
 
 ```bash
