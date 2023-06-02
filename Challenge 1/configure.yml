@@ -1,0 +1,7 @@
+---
+- name: Configure instances
+  hosts: "{{ target }}"
+  gather_facts: false
+  become: true
+  roles:
+    - kthConfig

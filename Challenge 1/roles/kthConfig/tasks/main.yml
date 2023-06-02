@@ -1,0 +1,25 @@
+---
+- name: Install build-essential package
+  apt:
+    name: build-essential
+    state: present
+
+- name: Create temporary directory
+  ansible.builtin.file:
+    path: "/tmp/mytempdir"
+    state: directory
+    mode: '0755'
+  register: temp_dir
+
+- name: Copy hello world C program
+  ansible.builtin.copy:
+    src: files/hello.c
+    dest: "{{ temp_dir.path }}/hello.c"
+
+- name: Compile hello world C program
+  ansible.builtin.command:
+    cmd: gcc -o "{{ temp_dir.path }}/hello" "{{ temp_dir.path }}/hello.c"
+
+- name: Move compiled program to /usr/local/bin
+  ansible.builtin.command:
+    cmd: mv "{{ temp_dir.path }}/hello" /usr/local/bin/hello
